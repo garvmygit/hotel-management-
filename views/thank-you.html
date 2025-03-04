@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="/public/bootstrap/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #333;
+            color: #f3c623;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .message {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .btn {
+            background: #f3c623;
+            color: #000;
+            border: none;
+        }
+        .btn:hover {
+            background: #e3b423;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>Thank You for Contacting Us!</h1>
+        <p>We will get back to you shortly.</p>
+        <button class="btn" onclick="window.location.href='/dashboard'">Back to Dashboard</button>
+    </div>
+</body>
+</html>

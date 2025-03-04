@@ -1,0 +1,136 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FAFAFA; /* Off-White Background */
+    color: #333333; /* Charcoal Gray Text */
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #b71313; /* Charcoal Gray Background */
+    color: #FAFAFA; /* Off-White Text */
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333333; /* Charcoal Gray */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+nav a {
+    color: #FAFAFA; /* Off-White */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #FAFAFA; /* Off-White */
+    color: #333333; /* Charcoal Gray */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #333333; /* Charcoal Gray Background */
+    color: #FAFAFA; /* Off-White Text */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #333333; /* Subtle shadow for readability */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px #333333; /* Subtle shadow for readability */
+}
+
+/* Buttons */
+button {
+    background-color: #333333; /* Charcoal Gray */
+    color: #FAFAFA; /* Off-White */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FAFAFA; /* Off-White */
+    color: #333333; /* Charcoal Gray */
+    border: 1px solid #333333;
+}
+
+/* Content Section */
+.content {
+    padding: 50px 20px;
+    background-color: #FAFAFA; /* Off-White Background */
+    color: #333333; /* Charcoal Gray Text */
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333333; /* Charcoal Gray Text */
+}
+
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333333; /* Charcoal Gray */
+    color: #FAFAFA; /* Off-White */
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
