@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Luxury Suite",
+        "type": "family",
+        "price": 4500,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?luxury,hotel"
+    },
+    {
+        "name": "Business Deluxe",
+        "type": "business",
+        "price": 3200,
+        "available": false,
+        "img": "https://source.unsplash.com/400x300/?business,hotel"
+    },
+    {
+        "name": "Conference Hall",
+        "type": "conference",
+        "price": 6000,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?conference,hotel"
+    },
+    {
+        "name": "Couple's Retreat",
+        "type": "couple",
+        "price": 5000,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?couple,hotel"
+    },
+    {
+        "name": "Executive Suite",
+        "type": "business",
+        "price": 5500,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?executive,hotel"
+    },
+    {
+        "name": "Single Budget Room",
+        "type": "single",
+        "price": 1800,
+        "available": false,
+        "img": "https://source.unsplash.com/400x300/?single,hotel"
+    },
+    {
+        "name": "Deluxe Kitty Party Hall",
+        "type": "kitty",
+        "price": 3500,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?party,hotel"
+    },
+    {
+        "name": "Romantic Honeymoon Suite",
+        "type": "couple",
+        "price": 7000,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?honeymoon,hotel"
+    },
+    {
+        "name": "Presidential Suite",
+        "type": "special",
+        "price": 12000,
+        "available": false,
+        "img": "https://source.unsplash.com/400x300/?presidential,hotel"
+    },
+    {
+        "name": "Standard Room",
+        "type": "single",
+        "price": 2500,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?standard,hotel"
+    },
+    {
+        "name": "Royal Wedding Hall",
+        "type": "special",
+        "price": 15000,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?wedding,hotel"
+    },
+    {
+        "name": "Economy Business Room",
+        "type": "business",
+        "price": 2800,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?economy,hotel"
+    },
+    {
+        "name": "Premium Family Suite",
+        "type": "family",
+        "price": 4800,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?family,hotel"
+    },
+    {
+        "name": "VIP Executive Room",
+        "type": "business",
+        "price": 6000,
+        "available": false,
+        "img": "https://source.unsplash.com/400x300/?vip,hotel"
+    },
+    {
+        "name": "Deluxe Special Occasion Room",
+        "type": "special",
+        "price": 8200,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?deluxe,hotel"
+    },
+    {
+        "name": "Corporate Meeting Hall",
+        "type": "conference",
+        "price": 5800,
+        "available": true,
+        "img": "https://source.unsplash.com/400x300/?corporate,hotel"
+    }
+]
