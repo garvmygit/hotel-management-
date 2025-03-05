@@ -71,11 +71,11 @@
 
         .password-check p {
             margin: 5px 0;
-            color: #ff4b5c; /* Default Red */
+            color: #ff4b5c;
         }
 
         .valid {
-            color: #4caf50 !important; /* Green when satisfied */
+            color: #4caf50 !important;
         }
 
         /* Button Styling */
@@ -116,7 +116,6 @@
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
         
-        <!-- Password Validation Box -->
         <div class="password-check" id="passwordCheck">
             <p id="length">❌ At least 8 characters</p>
             <p id="uppercase">❌ At least 1 uppercase letter (A-Z)</p>
@@ -141,14 +140,13 @@
     const specialCheck = document.getElementById("special");
 
     passwordInput.addEventListener("focus", () => {
-        passwordCheck.style.display = "block"; // Show password validation
+        passwordCheck.style.display = "block";
     });
 
     passwordInput.addEventListener("input", () => {
         const value = passwordInput.value;
         let valid = true;
 
-        // Check conditions
         if (value.length >= 8) {
             lengthCheck.classList.add("valid");
             lengthCheck.innerHTML = "✅ At least 8 characters";
@@ -194,14 +192,12 @@
             valid = false;
         }
 
-        // Enable button only if all conditions are met
-        registerButton.disabled = !valid;
-        registerButton.classList.toggle("active", valid);
-    });
-
-    passwordInput.addEventListener("blur", () => {
-        if (passwordInput.value === "") {
-            passwordCheck.style.display = "none"; // Hide when input is empty
+        if (valid) {
+            registerButton.classList.add("active");
+            registerButton.disabled = false;
+        } else {
+            registerButton.classList.remove("active");
+            registerButton.disabled = true;
         }
     });
 
@@ -212,7 +208,7 @@
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        const response = await fetch("/register", {
+        const response = await fetch("http://localhost:3000/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, email, password })
@@ -220,10 +216,9 @@
 
         if (response.ok) {
             alert("User registered successfully!");
-            window.location.href = "/login"; // Redirect to login page
+            window.location.href = "login.html";
         } else {
-            const result = await response.json();
-            alert(result.error || "Registration failed.");
+            alert("Registration failed. Try again.");
         }
     });
 
