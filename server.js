@@ -14,28 +14,29 @@ const PORT = 8080;
 app.use(morgan("dev")); // Logs HTTP requests
 app.use(helmet()); // Security middleware
 app.use(bodyParser.urlencoded({ extended: true })); // Parses form data
+app.use(express.json()); // Parses JSON payloads
 app.use(cookieParser()); // Parses cookies
 app.use(cors()); // Enables CORS
 
 // Serve static files from 'public'
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
-// Serve views (HTML files)
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, "views", "index.html")));
-app.get("/contact", (req, res) => res.sendFile(path.join(__dirname, "views", "contact.html")));
-app.get("/portfolio", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "portfolio.html"));
-});
-const pages = ["register","login", "subdepartment","department" ,"thank-you","rooms","home"];
+// Serve HTML pages dynamically
+const pages = ["index", "register", "login", "subdepartment", "department", "thank-you", "rooms", "home"];
 pages.forEach((page) => {
-    app.get(/${page}, (req, res) => {
-        res.sendFile(path.join(__dirname, "views", ${page}.html));
+    app.get(`/${page}`, (req, res) => {
+        res.sendFile(path.join(__dirname, "public", `${page}.html`));
     });
 });
 
-// Register & Login
+// Register User
 app.post("/register", (req, res) => {
     const { username, password } = req.body;
+
+    if (!username || !password) {
+        return res.status(400).send("Username and password are required.");
+    }
+
     let users = {};
 
     if (fs.existsSync("users.json")) {
@@ -51,8 +52,18 @@ app.post("/register", (req, res) => {
     res.redirect("/login");
 });
 
+// Login User
 app.post("/login", (req, res) => {
     const { username, password } = req.body;
+
+    if (!username || !password) {
+        return res.status(400).send("Username and password are required.");
+    }
+
+    if (!fs.existsSync("users.json")) {
+        return res.status(401).send("No users registered.");
+    }
+
     const users = JSON.parse(fs.readFileSync("users.json", "utf8"));
 
     if (users[username] && users[username] === password) {
@@ -62,7 +73,10 @@ app.post("/login", (req, res) => {
     }
 });
 
-app.get("/dashboard", (req, res) => res.sendFile(path.join(__dirname, "views", "dashboard.html")));
+// Dashboard Page
+app.get("/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "dashboard.html"));
+});
 
 // 404 Error Middleware
 app.use((req, res, next) => {
@@ -76,4 +90,4 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => console.log(Server running at http://localhost:${PORT}/));
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/`));
