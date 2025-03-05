@@ -195,13 +195,8 @@
         }
 
         // Enable button only if all conditions are met
-        if (valid) {
-            registerButton.classList.add("active");
-            registerButton.disabled = false;
-        } else {
-            registerButton.classList.remove("active");
-            registerButton.disabled = true;
-        }
+        registerButton.disabled = !valid;
+        registerButton.classList.toggle("active", valid);
     });
 
     passwordInput.addEventListener("blur", () => {
@@ -209,28 +204,28 @@
             passwordCheck.style.display = "none"; // Hide when input is empty
         }
     });
-document.getElementById("registerForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    document.getElementById("registerForm").addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-    const response = await fetch("http://localhost:3000/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, email, password })
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const response = await fetch("/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, email, password })
+        });
+
+        if (response.ok) {
+            alert("User registered successfully!");
+            window.location.href = "/login"; // Redirect to login page
+        } else {
+            const result = await response.json();
+            alert(result.error || "Registration failed.");
+        }
     });
-
-    const result = await response.json();
-
-    if (response.ok) {
-        alert("User registered successfully!");
-        document.getElementById("registerForm").reset();
-    } else {
-        alert(result.message);
-    }
-});
 
 </script>
 
