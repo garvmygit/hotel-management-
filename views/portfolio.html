@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/public/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #f4f4f4, #ffffff);
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background: linear-gradient(135deg, #ff9800, #ffc107);
+        color: white;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+        font-family: 'Georgia', serif;
+        font-size: 3rem;
+        text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+        letter-spacing: 2px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #555;
+    }
+
+    /* Gallery Styles */
+    .row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .row img {
+        border-radius: 15px;
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .row img:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Back to Home Button */
+    .btn-secondary {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        color: #fff;
+        background-color: #333;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: #555;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .row img {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 2rem;
+        }
+
+        .btn-secondary {
+            font-size: 1rem;
+            padding: 8px 16px;
+        }
+    }
+</style>
+<body>
+    <header class="text-center py-4">
+        <h1>Our Portfolio</h1>
+    </header>
+    <main class="container my-5">
+        <p>Discover the elegance and luxury of our hotel through the gallery below:</p>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/public/images/img2.jpg" class="img-fluid" alt="Hotel View">
+            </div>
+            <div class="col-md-4">
+                <img src="/public/images/img3.jpg" class="img-fluid" alt="Suite">
+            </div>
+            <div class="col-md-4">
+                <img src="/public/images/img4.jpg" class="img-fluid" alt="Dining Area">
+            </div>
+        </div>
+        <a href="index.html" class="btn btn-secondary mt-4">Back to Home</a>
+    </main>
+</body>
+</html>

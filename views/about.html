@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Hotel Elite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Root Variables */
+        :root {
+            --primary-dark: #1b1b1b;
+            --secondary-dark: #2c3e50;
+            --accent-color: #fca311;
+            --text-light: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Body & Background Styling */
+        body {
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary-dark));
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-color) !important;
+        }
+
+        .nav-link {
+            color: var(--text-light) !important;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: gold;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Container */
+        .glass-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 85%;
+            max-width: 900px;
+            text-align: center;
+            margin: 20px auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Info Sections */
+        .info-section {
+            margin-top: 30px;
+            text-align: justify;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Typing Effect */
+        .typing {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid var(--accent-color);
+            animation: typing 3s steps(30) infinite alternate, blink 0.8s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Button Styling */
+        .btn-custom {
+            background: var(--accent-color);
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            background: #ff9f1c;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(252, 163, 17, 0.8);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--text-light);
+            padding: 30px 0;
+            font-size: 1rem;
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .footer h5 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons .icon {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons .icon:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Elite</a>
+        </div>
+    </nav>
+
+    <!-- Header with Animated Text -->
+    <header>
+        <h1 class="typing">Welcome to Hotel Elite</h1>
+    </header>
+
+    <!-- Main Glassmorphic Container -->
+    <main class="glass-container">
+        <p>At <strong>Hotel Elite</strong>, we offer an unparalleled luxury experience. From world-class hospitality to exquisite interiors, we ensure that every moment of your stay is unforgettable.</p>
+        
+        <section class="info-section">
+            <h3>🌟 Our Mission</h3>
+            <p>To provide guests with a blend of comfort, elegance, and impeccable service, ensuring a truly elite experience.</p>
+        </section>
+
+        <section class="info-section">
+            <h3>🏨 Our Services</h3>
+            <ul>
+                <li>🌍 24/7 Concierge & Customer Support</li>
+                <li>🍽️ Gourmet Dining & Exclusive Restaurants</li>
+                <li>🏊‍♂️ Luxury Pool & Spa Retreats</li>
+                <li>💼 Business Suites & Conference Halls</li>
+                <li>🚗 Free Parking & Airport Transfers</li>
+            </ul>
+        </section>
+
+        <a href="/home" class="btn btn-custom mt-4">Back to Home</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h5>Hotel Elite</h5>
+        <p>Your gateway to luxury and comfort.</p>
+        <div class="social-icons">
+            <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 Hotel Elite. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const text = "Welcome to Hotel Elite";
+        let i = 0;
+        function typeEffect() {
+            document.querySelector(".typing").textContent = text.substring(0, i);
+            i = (i > text.length) ? 0 : i + 1;
+            setTimeout(typeEffect, 150);
+        }
+        typeEffect();
+    </script>
+
+</body>
+</html>
